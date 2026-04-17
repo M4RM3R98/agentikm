@@ -225,27 +225,6 @@ h3 {
   max-width: 70ch;
 }
 
-.leitmotiv-box {
-  background: #ffffff;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  padding: 1.45rem;
-  box-shadow: 0 10px 28px rgba(8, 35, 76, 0.08);
-}
-
-.leitmotiv-list {
-  margin-top: 1rem;
-  padding-left: 1rem;
-}
-
-.leitmotiv-list li {
-  margin-bottom: 0.5rem;
-}
-
-.leitmotiv-list strong {
-  color: var(--navy-900);
-}
-
 .steps-grid {
   display: grid;
   gap: 1rem;
@@ -307,6 +286,14 @@ h3 {
   background: #fff;
 }
 
+.form-hidden {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .form-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -357,6 +344,22 @@ textarea:focus-visible {
 .small-note {
   color: var(--text-500);
   font-size: 0.9rem;
+}
+
+.form-status {
+  margin: 0.9rem 0 0;
+  padding: 0.7rem 0.85rem;
+  border-radius: 10px;
+  border: 1px solid #9fdcbc;
+  background: #eefcf4;
+  color: #175b34;
+  font-weight: 600;
+}
+
+.form-status.error {
+  border-color: #e0b0b0;
+  background: #fff3f3;
+  color: #7a2323;
 }
 
 .site-footer {

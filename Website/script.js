@@ -34,3 +34,59 @@ const observer = new IntersectionObserver(
 );
 
 revealElements.forEach((element) => observer.observe(element));
+
+const contactForm = document.querySelector('form[name="kontaktanfrage"]');
+
+if (contactForm) {
+  const statusMessage = contactForm.querySelector(".form-status");
+  const submitButton = contactForm.querySelector('button[type="submit"]');
+  const initialButtonText = submitButton ? submitButton.textContent : "";
+
+  contactForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    if (statusMessage) {
+      statusMessage.hidden = true;
+      statusMessage.classList.remove("error");
+      statusMessage.textContent = "";
+    }
+
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = "Wird gesendet...";
+    }
+
+    const formData = new FormData(contactForm);
+
+    try {
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString()
+      });
+
+      if (!response.ok) {
+        throw new Error("Form submit failed");
+      }
+
+      contactForm.reset();
+
+      if (statusMessage) {
+        statusMessage.hidden = false;
+        statusMessage.textContent = "Danke! Ihre Anfrage wurde gesendet. Wir melden uns zeitnah.";
+      }
+    } catch (error) {
+      if (statusMessage) {
+        statusMessage.hidden = false;
+        statusMessage.classList.add("error");
+        statusMessage.textContent =
+          "Die Anfrage konnte gerade nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie an kontakt@agentikm.de.";
+      }
+    } finally {
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = initialButtonText;
+      }
+    }
+  });
+}
