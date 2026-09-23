@@ -130,3 +130,23 @@ h1,h2,h3,p,li,a,strong,span,label{overflow-wrap:anywhere}
 @media(max-width:1150px) and (min-width:851px){.document-use{font-size:.83rem}.founder-qualifications{gap:16px}.founder-qualifications h4{font-size:.93rem}}
 @media(max-width:640px){.hero-author-details .author-qualification,.hero-author-details .author-experience{font-size:.73rem}.document-use{font-size:.83rem}.founder-qualifications{gap:20px;grid-template-columns:1fr;padding:23px 0}.founder-qualifications .qualification + .qualification{border-top:1px solid #dce4e4;padding-top:18px}.example-heading h2{font-size:1.9rem}}
 @media(max-width:360px){.document-use{font-size:.73rem}.document-name{font-size:.67rem}.document-room{font-size:.66rem}.example-heading h2{font-size:1.7rem}}
+
+/* Preview: personal introduction in the hero, document comparison beside the biography. */
+.hero-person{align-self:center;overflow:hidden;border:1px solid #d4e0df;border-radius:9px;background:#fff;box-shadow:0 16px 48px -34px #21474d55;min-width:0}
+.hero-person-photo{display:block;width:100%;height:330px;object-fit:cover;object-position:50% 31%}
+.hero-person-copy{padding:27px 30px 28px}
+.hero-person-copy .eyebrow{font-size:.64rem;margin:0 0 10px;letter-spacing:.09em}
+.hero-person-copy h2{font-size:1.7rem;line-height:1.2;letter-spacing:-.035em;margin:0 0 9px}
+.hero-person-experience{font-size:.85rem;line-height:1.6;margin:0;color:#405967}
+.hero-person .founder-qualifications{margin:21px 0 20px;padding:17px 0;gap:20px}
+.hero-person .founder-qualifications h4{font-size:.94rem}
+.hero-person .founder-qualifications .qualification-label{font-size:.6rem}
+.hero-person .founder-qualifications .qualification > p:last-child{font-size:.75rem}
+.hero-person .text-link{font-size:.82rem}
+.founder-grid{grid-template-columns:1fr 1.1fr;align-items:center}
+.founder-grid .project-example{width:100%;background:#f2f3ec}
+@media(max-width:1150px) and (min-width:851px){.hero-person-copy{padding:23px}.hero-person-photo{height:300px}.hero-person-copy h2{font-size:1.45rem}.hero-person .founder-qualifications{grid-template-columns:1fr;gap:15px}.founder-grid{gap:5%}}
+@media(max-width:850px){.hero-person{width:100%;max-width:580px;justify-self:center}.hero-person-photo{height:380px}.founder-grid{grid-template-columns:1fr;gap:42px}.founder-grid .project-example{max-width:580px;justify-self:center}}
+@media(max-width:640px){.hero-person-photo{height:300px}.hero-person-copy{padding:24px}.hero-person-copy h2{font-size:1.5rem}.hero-person .founder-qualifications{grid-template-columns:1fr;gap:15px}.hero-person .qualification + .qualification{padding-top:15px}}
+@media(max-width:360px){.hero-person-photo{height:260px}.hero-person-copy{padding:21px}.hero-person-copy h2{font-size:1.35rem}}
+.hero-person-photo{object-position:50% 0}
